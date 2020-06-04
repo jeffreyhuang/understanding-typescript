@@ -1,15 +1,13 @@
-function add(n1: number, n2: number, showResult: boolean, phrase: string) {
-  const result = n1 + n2;
-  if (showResult) {
-    console.log(phrase + result);
-  } else {
-    return result;
-  }
+const person = {
+  name: 'Jeffrey',
+  age: 33,
+  hobbies: ['Sports', 'Cooking']
+};
+
+let favoriteActivities: string[];
+favoriteActivities = ['Sports', 'Cooking'];
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toLowerCase());
+  // console.log(hobby.map()); // ERROR !!!
 }
-
-const number1 = 5;
-const number2 = 2.8;
-const printResult = true;
-const resultPhrase = 'Result is: ';
-
-add(number1, number2, printResult, resultPhrase); // Result is: 7.8
