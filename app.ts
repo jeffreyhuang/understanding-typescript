@@ -1,13 +1,16 @@
-const person = {
-  name: 'Jeffrey',
-  age: 33,
-  hobbies: ['Sports', 'Cooking']
-};
+enum Role {GUEST = 1, AUTHOR, ADMIN};
 
-let favoriteActivities: string[];
-favoriteActivities = ['Sports', 'Cooking'];
+const people = [
+  { name: 'Alex', role: Role.AUTHOR },
+  { name: 'Bill', role: Role.ADMIN },
+  { name: 'Cole', role: Role.GUEST }
+]
 
-for (const hobby of person.hobbies) {
-  console.log(hobby.toLowerCase());
-  // console.log(hobby.map()); // ERROR !!!
+for (const person of people) {
+  const name = person.name;
+  if (person.role >= Role.AUTHOR) {
+    console.log(name + ': access granted');
+  } else {
+    console.log(name + ': access denied');
+  }
 }
