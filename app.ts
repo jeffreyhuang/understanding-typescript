@@ -1,15 +1,16 @@
-const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string];
-} = {
-  name: 'Jeffrey',
-  age: 33,
-  hobbies: ['Sports', 'Cooking'],
-  role: [2, 'author']
-};
+enum Role {GUEST = 1, AUTHOR, ADMIN};
 
-// person.role[1] = 10; // error
-// person.role = [0, 'admin', 'user']; // error
-person.role.push('admin'); // ok
+const people = [
+  { name: 'Alex', role: Role.AUTHOR },
+  { name: 'Bill', role: Role.ADMIN },
+  { name: 'Cole', role: Role.GUEST }
+]
+
+for (const person of people) {
+  const name = person.name;
+  if (person.role >= Role.AUTHOR) {
+    console.log(name + ': access granted');
+  } else {
+    console.log(name + ': access denied');
+  }
+}
