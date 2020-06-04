@@ -1,13 +1,15 @@
-const person = {
+const person: {
+  name: string;
+  age: number;
+  hobbies: string[];
+  role: [number, string];
+} = {
   name: 'Jeffrey',
   age: 33,
-  hobbies: ['Sports', 'Cooking']
+  hobbies: ['Sports', 'Cooking'],
+  role: [2, 'author']
 };
 
-let favoriteActivities: string[];
-favoriteActivities = ['Sports', 'Cooking'];
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toLowerCase());
-  // console.log(hobby.map()); // ERROR !!!
-}
+// person.role[1] = 10; // error
+// person.role = [0, 'admin', 'user']; // error
+person.role.push('admin'); // ok
