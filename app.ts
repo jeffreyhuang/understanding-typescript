@@ -1,9 +1,13 @@
-const person: {
-  name: string;
-  age: number;
-} = {
+const person = {
   name: 'Jeffrey',
-  age: 33
+  age: 33,
+  hobbies: ['Sports', 'Cooking']
 };
 
-console.log(person.name);
+let favoriteActivities: string[];
+favoriteActivities = ['Sports', 'Cooking'];
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toLowerCase());
+  // console.log(hobby.map()); // ERROR !!!
+}
